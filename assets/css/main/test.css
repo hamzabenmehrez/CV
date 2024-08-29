@@ -1,0 +1,139 @@
+body1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #010e1b; /* Dark blue background color */
+  padding: 20px;
+}
+
+.wrapper1 {
+  display: flex;
+  gap: 20px;
+  width: 100%; /* Full width to accommodate one card at a time */
+  overflow-x: auto; /* Ensure horizontal scrolling */
+  scroll-snap-type: x mandatory;
+  margin: 20px auto;
+  padding-bottom: 0; /* Ensure the scrollbar is directly under the cards */
+  border-radius: 14px;
+  box-shadow: none; /* No shadow or background for the wrapper */
+  scrollbar-width: none; /* Hide default scrollbar for Firefox */
+}
+
+/* Custom scrollbar styling for WebKit (Chrome, Safari) */
+.wrapper1::-webkit-scrollbar {
+  height: 8px; /* Set height of the scrollbar */
+}
+
+.wrapper1::-webkit-scrollbar-track {
+  background: transparent; /* Transparent background for scrollbar track */
+}
+
+.wrapper1::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 153, 255, 0.7),
+    rgba(0, 255, 255, 0.7)
+  ); /* Softer gradient from neon blue to cyan */
+  border-radius: 10px; /* Rounded edges for scrollbar thumb */
+  box-shadow: 0 0 5px rgba(0, 153, 255, 0.5), 0 0 10px rgba(0, 153, 255, 0.3); /* Subtle neon glow effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.wrapper1:hover::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 153, 255, 1),
+    rgba(0, 255, 255, 1)
+  ); /* Slightly more visible gradient on hover */
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.8), 0 0 20px rgba(0, 153, 255, 0.6); /* Slightly stronger glow on hover */
+}
+
+/* Smoother scrolling */
+.wrapper1 {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+.card1 {
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  padding: 20px; /* Reduced padding for better content flexibility */
+  flex-shrink: 0;
+  width: calc(
+    100% - 20px
+  ); /* Card takes up full width of the container, minus margin */
+  background-color: #1d2336; /* Slightly lighter dark blue-grey card background */
+  border-radius: 14px;
+  text-align: center; /* Center all text inside the card */
+  margin: 10px 0; /* Adjust margin to avoid extra space between cards */
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  height: auto; /* Allow height to adjust based on content */
+  box-shadow: 0 0 5px rgba(95, 83, 13, 0.885), 0 0 15px rgba(5, 10, 62, 0.954),
+    0 0 25px rgba(49, 13, 121, 0.827);
+}
+
+.card1:hover {
+  box-shadow: 0 0 10px rgba(26, 21, 114, 0.4), 0 0 20px rgba(42, 42, 41, 0.3),
+    0 0 30px rgba(11, 19, 70, 0.2);
+  transform: scale(1.09);
+  transition: transform 0.9s ease;
+  background: linear-gradient(
+    135deg,
+    #09153a 20%,
+    #000000 100%
+  ); /* Gradient shift on hover */
+}
+
+.card1 h4 {
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading text */
+}
+
+.scroll-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  user-select: none;
+}
+
+.scroll-indicator.left {
+  left: 10px;
+}
+
+.scroll-indicator.right {
+  right: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.scroll-indicator {
+  animation: pulse 1.5s infinite;
+}
+/*about*/
+.profile-img {
+  transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+  width: 100%; /* Full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0.5rem; /* Rounded corners for the image */
+}
+
+.profile-img:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
