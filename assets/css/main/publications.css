@@ -89,3 +89,4 @@ body {
   font-size: clamp(var(--fs-600), 1rem + 5vw, 5rem);
   font-weight: 900;
 }
+
