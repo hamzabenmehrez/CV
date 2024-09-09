@@ -4,7 +4,7 @@
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  height: 250px; /* Fixed height for initial state */
+  height: 330px; /* Fixed height for initial state */
   width: 100%; /* Ensures full width within the column */
   display: flex;
   flex-direction: column;
